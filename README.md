@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ChatWithDocument
 
-# Run and deploy your AI Studio app
+A clean and modern web application for searching and querying documents with email validation.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1UwcI9tU5ZgHEn60wJSoCqnVOYGcLWk6L
+- Email validation with real-time feedback
+- Clean white and blue interface
+- Form submission to custom API endpoint
+- Responsive design
+- Built with React and TypeScript
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+   npm install
+```
+
+2. Run the app:
+```bash
+   npm run dev
+```
+
+3. Open browser at `http://localhost:3000`
+
+## Configuration
+
+Update the API endpoint in `App.tsx` (line 46):
+```typescript
+const API_URL = 'https://your-api-endpoint.com/submit';
+```
+
+The application will send POST requests with the following JSON structure:
+```json
+{
+  "user_email": "user@example.com",
+  "user_request": "search query text"
+}
+```
+
+## Project Structure
+```
+├── App.tsx           # Main application component
+├── index.tsx         # React entry point
+├── index.html        # HTML template
+├── metadata.json     # Project metadata
+├── package.json      # Dependencies
+├── tsconfig.json     # TypeScript configuration
+└── vite.config.ts    # Vite configuration
+```
+
+## Build for Production
+```bash
+npm run build
+```
+
+## License
+
+MIT
